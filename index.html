@@ -11,12 +11,61 @@ href='https://fonts.googleapis.com/css?family=Roboto'>
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Times New Roman", serif}
+.tablink {
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      cursor: pointer;
+      background-color: #f1f1f1;
+    }
+    .tablink:hover {
+      background-color: #ddd;
+    }
+    .tablink.active {
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+    .tab-content {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
 </style>
+<script>
+  // JavaScript for Tabs
+  document.getElementsByClassName("tablink")[0].click(); // Activate first 
+tab by default
+
+  function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+  }
+</script>
 </head>
 <body class="w3-light-grey">
 
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
+<!--Navbar(Tabs)-->
+  <div class="w3-bar w3-teal">
+    <button class="w3-bar-item w3-button tablink" onclick="openTab(event, 
+'home')">Home</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openTab(event, 
+'about')">About</button>
+  </div>
 
   <!-- The Grid -->
   <div class="w3-row-padding">
