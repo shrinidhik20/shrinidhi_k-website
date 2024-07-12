@@ -11,25 +11,39 @@ href='https://fonts.googleapis.com/css?family=Roboto'>
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Times New Roman", serif}
+ .tablink-container {
+      display: flex;
+      border-bottom: 1px solid #ccc;
+    }
 .tablink {
+      flex: 1;
       padding: 10px 15px;
       border: 1px solid #ccc;
-      border-bottom: none;
+      border-right: 1px solid teal;
       cursor: pointer;
-      background-color: #f1f1f1;
+      background-color: teal;
+      color:white;
+      text-align: center;
+      font-weight: bold;
+
     }
+      .tablink:last-child {
+      border-right: none;
+}
     .tablink:hover {
       background-color: #ddd;
     }
     .tablink.active {
-      background-color: #fff;
-      border-bottom: 1px solid #ccc;
+      background-color: teal;
+      color: white;
     }
     .tab-content {
       display: none;
       padding: 20px;
-      border: 1px solid #ccc;
-      border-top: none;
+      border-left: 1px solid teal;
+      border-right: 1px solid teal;
+      border-bottom: 1px solid teal;
+      
     }
     .tab-content.active {
       display: block;
